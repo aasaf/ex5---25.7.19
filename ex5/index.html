@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+
+    <script src="bootstrap.js"></script>
+
+    <script src="constService.js"></script>
+    <script src= "dataService.js"></script>
+    <script src= "serverService.js"></script>
+
+    <script src= "parentCtrl.js"></script>
+
+</head>
+<body >
+
+    <div ng-controller="parentCtrl">
+
+        <!-- <p>{{todos}}</p> -->
+        
+     <!--   <p ng-repeat="todo in todos">{{todo.title}}</p> -->
+
+        <table border="1">
+            <tr style="background:lightyellow ; padding: 10px">
+                <th>#</th>
+                <th>UserId</th>
+                <th>Id</th>
+                <th>Title</th>
+                
+            </tr>
+            <tr ng-repeat="m in data ">
+                <td> {{$index}} </td>
+                <td> {{m.userId}}</td>
+                <td>{{m.id}}</td>
+                <td>{{m.title}}</td>
+            </tr>
+        </table>
+
+        <input  ng-model="id" type="number" name="id" >Id<br></br>
+        <button ng-click="clicked()">Bring me this id!</button>
+
+                    <p>{{data.userId}}</p>
+                    <p>{{data.id}}</p>
+                    <p>{{data.title}}</p>
+
+    </div>
+    
+    <br>
+</body>
+</html>
